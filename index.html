@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Boldonse&display=swap" rel="stylesheet">
+    <title>Hava Durumları</title>
+    <style>
+        body {
+            font-family: 'Boldonse', sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+        }
+
+       
+
+        nav h2 {
+            text-align: center;
+            margin: 0;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        .Resimler, .Hava Haberleri, .Türkiye Haberleri, .Dünya Haberleri {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #weather {
+            margin-top: 30px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 8px;
+            width: 300px;
+            margin: 20px auto;
+        }
+
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 16px;
+            width: 200px;
+        }
+
+        *{
+margin:0 ;
+padding: 0 15px;
+
+
+.boldonse-regular {
+    font-family: "Boldonse", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+  body {
+    background-image: url(HavaResmi1.jpg) ;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+
+  .navbar{
+    height: 20vh ;
+    width: 100px;
+    color: aliceblue;
+    display: flex;
+    align-items: center;
+    flex-direction:flex-end;
+    gap: 200px;
+    justify-content:space-around ;
+  }
+
+  .Resimler {
+    width: 300px;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    margin: 20px auto;
+    background-color: #f9f9f9;
+}
+
+
+   .resmi {
+    padding: 20px;
+    display: flexbox ;
+    text-align: right;
+    align-items: right;
+    margin-top: 50px;
+    height: 0vh;
+
+
+
+}
+
+  a{
+    text-decoration: name ;
+    color: aliceblue;
+    transition: 0.5s;
+  }
+  h2{
+  cursor: pointer;
+  transition: 0.5s;
+  }
+  
+  a:hover{
+    color :darkgray;
+  }
+
+
+  
+
+}
+
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <h2>HOŞGELDİNİZ</h2>
+        <a href="1">Ana&nbsp;sayfa</a>
+        <a href="2">İstanbul</a>
+        <a href="3">Türkiye</a>
+        <a href="4">Dünya&nbsp;Hava&nbsp;Gelişmesi</a>
+    </nav>
+
+    <div class="resmi">
+        <img id="Birdenfazlaresimler" src="resimler/resim(1-6).jpeg" alt="Görsel" width="400">
+        <br><br>
+        <button onclick="prevImage()" style="background-color: darkgrey; border-radius: 10px;">Önceki Resim</button>
+        <button onclick="nextImage()" style="background-color: darkgrey; border-radius: 10px;"> Sonraki Resim</button>
+    </div>
+
+    <script>
+        
+        const images = [
+            "resimler/resim(1-6).jpeg", // 1. Resim
+            "resimler/resim(2-6).jpg", // 2. Resim
+            "resimler/resim(3-6).jpg", // 3. Resim
+            "resimler/resim(4-6).png", // 4. Resim
+            "resimler/resim(5-6).jpeg", // 5. Resim
+            "resimler/resim(6-6).webp"  // 6. Resim
+        ];
+
+        let currentIndex = 0; // Başlangıçta 1. resmi gösteriyoruz.
+
+        
+        function prevImage() {
+            currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1; // İlk resime geldiğinde sonrasına dön
+            document.getElementById("Birdenfazlaresimler").src = images[currentIndex];
+        }
+
+        
+        function nextImage() {
+            currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1; // Son resime geldiğinde ilk resime dön
+            document.getElementById("Birdenfazlaresimler").src = images[currentIndex];
+        }
+    </script>
+    
+
+    <div class="Hava Haberleri">
+        <img src="Birdenfazlaresim.jpg" alt="Hava Haberleri" height="200px" width="400px">
+        <h3>Hava Bilgileri</h3>
+        <br>
+        <p>Hava gelişimleri ve hava ile ilgili birçok bilgiyi buradan öğrenebilirsiniz.</p>
+        <br>
+        <button class="button1" onclick="alert('İşleminiz şuan gerçekleştiriliyor...')" style="background-color: darkgrey; border-radius: 10px;">Bilgi almak istiyorsanız buraya basınız</button>
+    </div>
+
+    <br><br>
+
+    <div class="Türkiye Haberleri">
+        <img src="yağmurlu hava.jpg" alt="Türkiye" height="200px" width="400px">
+        <h3>Türkiye Hava Gelişimleri</h3>
+        <br>
+        <p>Türkiye hava gelişimleri için buradan bakabilirsiniz.</p>
+        <br>
+        <button class="button2" onclick="alert('İşleminiz şuan gerçekleştiriliyor...')" style="background-color: darkgrey; border-radius: 10px;">Öğrenmek için buraya basınız</button>
+    </div>
+
+    <br><br>
+
+    <div class="Dünya Haberleri">
+        <img src="Dunya resmi.jpg" alt="Dünya" height="200px" width="400px">
+        <h3>Dünya Hava Gelişimleri</h3>
+        <br>
+        <p>Dünya hava ve gelişimleri için buradan bakabilirsiniz.</p>
+        <br>
+        <button class="button3" onclick="alert('İşleminiz şuan gerçekleştiriliyor...')" style="background-color: darkgrey; border-radius: 10px;">Dünya haberleri için basınız</button>
+    </div>
+
+    <br><br>
+
+    <div class="Hava Durumu">
+        <h3>Hava Durumunu Öğren</h3>
+        <br>
+        <input type="text" id="city" placeholder="Şehir adı girin" />
+        <br><br>
+        <button onclick="getWeather()"  style="background-color: darkgrey; border-radius: 10px;" >Hava Durumunu Getir</button>
+        <div id="weather"></div>
+    </div>
+
+<br><br>
+
+    <script>
+        function getWeather() {
+            const city = document.getElementById("city").value;
+            const apiKey = "3baeb64761b94b91b5b110654252803";  
+            const url = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&lang=tr`;
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.error) {
+                        document.getElementById("weather").innerHTML = `
+                            <p style="color: red;">Şehir bulunamadı veya bir hata oluştu. Lütfen geçerli bir şehir adı girin.</p>
+                        `;
+                        
+                    } else {
+                        document.getElementById("weather").innerHTML = `
+                            <h3>${data.location.name}, ${data.location.country} Şehri İçin Hava Durumu</h3>
+                            <p><strong>Sıcaklık:</strong> ${data.current.temp_c}°C</p>
+                            <p><strong>Hava Durumu:</strong> ${data.current.condition.text}</p>
+                            <p><strong>Rüzgar Hızı:</strong> ${data.current.wind_kph} km/h</p>
+                            <p><strong>Nem:</strong> ${data.current.humidity}%</p>
+                        `;
+                    }
+                })
+                .catch(error => {
+                    document.getElementById("weather").innerHTML = `
+                        <p style="color: red;">Bir hata oluştu: ${error}</p>
+                    `;
+                });
+        }
+    </script>
+<br><br>
+</body>
+</html>
